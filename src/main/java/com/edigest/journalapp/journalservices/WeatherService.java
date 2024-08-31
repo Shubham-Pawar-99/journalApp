@@ -3,12 +3,12 @@ package com.edigest.journalapp.journalservices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.edigest.journalapp.api.response.WeatherResponse;
 
-@Component
+@Service
 public class WeatherService {
 
     private static final String apikey = "c350d1c54d7a0a5bef4f45fe69d6d3b6";

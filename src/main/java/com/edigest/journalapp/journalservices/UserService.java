@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.edigest.journalapp.Entity.User;
 import com.edigest.journalapp.repo.UserRepo;
 
-@Component
+@Service
 public class UserService {
 
     @Autowired
