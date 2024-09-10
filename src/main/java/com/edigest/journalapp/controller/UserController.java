@@ -55,10 +55,11 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    // for rest templete =>
     @GetMapping
     public ResponseEntity<?> greeting() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        WeatherResponse weatherResponse = weatherService.getWeather("Delhi");
+        WeatherResponse weatherResponse = weatherService.getWeather("Pune");
         String greeting = "";
         if (weatherResponse != null) {
             greeting = ", Weather feels like a " + weatherResponse.getCurrent().getFeelslike();
