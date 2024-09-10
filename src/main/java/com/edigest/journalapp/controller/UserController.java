@@ -1,5 +1,7 @@
 package com.edigest.journalapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import com.edigest.journalapp.api.response.WeatherResponse;
 import com.edigest.journalapp.journalservices.UserService;
 import com.edigest.journalapp.journalservices.WeatherService;
 import com.edigest.journalapp.repo.UserRepo;
+import com.edigest.journalapp.repo.UserRepoImpl;
+
 
 @RestController
 @RequestMapping("/user")
@@ -30,6 +34,9 @@ public class UserController {
 
     @Autowired
     private WeatherService weatherService;
+
+    @Autowired
+    private UserRepoImpl userRepoImpl;
 
     // UPDATE USER
     @PutMapping
@@ -66,5 +73,16 @@ public class UserController {
         }
         return new ResponseEntity<>("Hi " + authentication.getName() + greeting, HttpStatus.OK);
     }
+
+
+    // Mongo Templete
+    @GetMapping("/userRepoImplTest")
+    public List<User> getMethodName() {
+        
+        List<User> users = userRepoImpl.getUserForSA();
+        
+        return users;
+    }
+    
 
 }
