@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.edigest.journalapp.Entity.User;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class UserRepoImpl {
 
     @Autowired
@@ -18,12 +21,11 @@ public class UserRepoImpl {
 
     public List<User> getUserForSA() {
         Query query = new Query();
-        // query.addCriteria(Criteria.where("username").is("ram"));
-        // query.addCriteria(Criteria.where("email").regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$", "i"));
+        query.addCriteria(Criteria.where("email").regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"));
         // query.addCriteria(Criteria.where("sentimentAnalysis").is(true));
-
-        query.addCriteria(Criteria.where("roles").is("ADMIN"));
+        // query.addCriteria(Criteria.where("roles").is("ADMIN"));
         List<User> list = mongoTemplate.find(query, User.class);
+        log.info("Query executed success");
         return list;
     }
 }

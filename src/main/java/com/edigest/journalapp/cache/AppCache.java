@@ -22,7 +22,6 @@ public class AppCache {
     @Autowired
     private ConfigJournalAppRepo configJournalAppRepo;
 
-    // Using ConcurrentHashMap for thread safety
     public Map<String, String> appCache= new HashMap<>();
 
     @PostConstruct
