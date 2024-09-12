@@ -54,7 +54,6 @@ public class JournalEntryController {
     // ADD NEW JOURNAL TO DATABASE
     @PostMapping
     public ResponseEntity<?> createEntry(@RequestBody JournalEntry myEntry) {
-
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String username = authentication.getName();

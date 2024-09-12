@@ -24,6 +24,7 @@ public class PublicController {
         return "Ok";
     }
 
+    // Create User and assign role as ADMIN / USER
     @PostMapping("/create-user")
     public ResponseEntity<?> createUser(@RequestBody User entity) {
         boolean result = userService.saveNewUser(entity);
