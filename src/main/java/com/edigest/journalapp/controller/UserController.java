@@ -67,7 +67,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // for rest templete => to handle the external api requests
+    // for rest templete => to handle the external api requests WEATHER SERVICE
     @GetMapping
     public ResponseEntity<?> greeting() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
