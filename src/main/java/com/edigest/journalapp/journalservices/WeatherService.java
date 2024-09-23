@@ -17,8 +17,8 @@ public class WeatherService {
     @Value("${weather.api.key}")
     private String apikey;
 
-    @Autowired
-    private RedisService redisService;
+    // @Autowired
+    // private RedisService redisService;
 
     @Autowired
     private AppCache appCache;
